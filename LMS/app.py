@@ -3,6 +3,7 @@ from tkinter import ttk
 from datetime import datetime
 from classes import User, Book, Admin
 import sqlite3
+import addbook
 #are used to establish a connection to a SQLite database and create a cursor object for executing SQL commands. Here's a detailed explanation:
 
 
@@ -75,7 +76,8 @@ class LibraryManagementSystem:
 #####################TOOL BAR ##########################
         #addbook
         self.addBookPic=PhotoImage(file='pictures/addbook.png', )
-        self.btnBook = Button(topFrame, text='Add Book', image=self.addBookPic, compound=LEFT, font='arial 12 bold')
+        self.btnBook = Button(topFrame, text='Add Book', image=self.addBookPic, compound=LEFT,
+                              font='arial 12 bold', command=self.addBook)
         self.btnBook.pack(side=LEFT,padx=5)
         #addmember
         self.addMemberPic=PhotoImage(file='pictures/addmember.png')
@@ -127,6 +129,10 @@ class LibraryManagementSystem:
         self.lbl_taken_count=Label(self.tab2, text="", pady=20, font='times 14 bold')
         self.lbl_taken_count.grid(row=2, sticky=W)
 
+
+
+    def addBook(self):
+        add = addbook.AddBook()
 
 def main():
     root = Tk()
