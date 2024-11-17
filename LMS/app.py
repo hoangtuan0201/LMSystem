@@ -3,7 +3,11 @@ from tkinter import ttk
 from datetime import datetime
 from classes import User, Book, Admin
 import sqlite3
+#are used to establish a connection to a SQLite database and create a cursor object for executing SQL commands. Here's a detailed explanation:
 
+
+con=sqlite3.connect('library.db')
+cur=con.cursor()
 
 
 
